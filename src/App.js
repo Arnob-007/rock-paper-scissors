@@ -1,26 +1,22 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React, { useState } from "react";
+import Header from "./Components/Header/Header";
+import Gameplay from "./Components/Gameplay/Gameplay";
+import Rules from "./Components/Footer/Rules";
+import Playing from "./Components/Playing/Playing";
+import "./App.css";
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
-}
+const App = () => {
+	const [played, setPlayed] = useState("");
+	const [score, setScore] = useState(0)
+
+	return (
+		<div className='app'>
+			<Header score = {score} />
+			{!played && <Gameplay setPlayed={setPlayed} />}
+			{played && <Playing played={played} setPlayed = {setPlayed} setScore = {setScore} />}
+			<Rules />
+		</div>
+	);
+};
 
 export default App;

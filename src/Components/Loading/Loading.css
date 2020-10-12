@@ -1,0 +1,51 @@
+.loading {
+	display: flex;
+}
+
+.bounce1 {
+	height: 15px;
+	width: 15px;
+	opacity: 0;
+	background-color: white;
+	border-radius: 50%;
+	margin-left: 5px;
+	animation: bounce 1000ms infinite;
+}
+
+.itm1 {
+	animation-delay: 0ms;
+}
+
+.itm2 {
+	animation-delay: 200ms;
+}
+
+.itm3 {
+	animation-delay: 300ms;
+}
+
+.itm4 {
+	animation-delay: 400ms;
+}
+
+@keyframes bounce {
+	0% {
+		transform: scale(0);
+		opacity: 1;
+	}
+	40% {
+		transform: scale(1.1);
+		opacity: 1;
+	}
+	100% {
+		transform: scale(0);
+		opacity: 1;
+	}
+}
+
+@media screen and (max-width: 700px) {
+	.bounce1 {
+		height: 10px;
+		width: 10px;
+	}
+}
